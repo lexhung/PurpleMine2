@@ -1,0 +1,42 @@
+.issue div.attachments {
+    border-top: none;
+}
+
+.history div.thumbnails a {
+    margin: 0 0 0.5em 0.5em;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    margin: -0.6em;
+    margin-bottom: 0.5em;
+    &.ui-corner-all {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.issue .attribute {
+    line-height: 1.75em;
+    .label {
+        min-width: 8em;
+        display: inline-block;
+        margin-right: 0.5em;
+        font-weight: bold;
+    }
+
+    .value {
+        display: inline-block;
+    }
+
+    &.progress .value {
+        display: block;
+        line-height: 1.25em;
+        margin-left: 8.5em;
+        margin-top: -1.5em;
+    }
+
+}
+
+#header h1 {
+    font-family: PragmataPro, $font-family-base;
+}
