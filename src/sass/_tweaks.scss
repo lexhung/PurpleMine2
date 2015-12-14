@@ -6,13 +6,21 @@
     margin: 0 0 0.5em 0.5em;
 }
 
-.ui-datepicker .ui-datepicker-header {
-    margin: -0.6em;
+.ui-datepicker .ui-datepicker-header,
+.ui-dialog-titlebar.ui-widget-header {
     margin-bottom: 0.5em;
     &.ui-corner-all {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
+}
+
+.ui-datepicker .ui-datepicker-header {
+    margin: -0.6em;
+}
+
+.ui-dialog-titlebar.ui-widget-header {
+    margin: -5px;
 }
 
 .issue .attribute {
@@ -39,4 +47,10 @@
 
 #header h1 {
     font-family: PragmataPro, $font-family-base;
+    font-size: 1.75em;
+}
+
+
+table.list thead tr {
+    border-top: 2px solid $hr-border;
 }

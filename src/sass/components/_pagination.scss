@@ -2,6 +2,10 @@
 // Pagination (multiple pages)
 // --------------------------------------------------
 .pagination {
+    .pages {
+        padding: 0;
+    }
+
     .previous,
     .next,
     .page {
@@ -21,7 +25,7 @@
         }
     }
 
-    .page.current {
+    .current {
         border-color: $pagination-active-border;
         background-color: $pagination-active-bg;
         color: $pagination-active-color;
