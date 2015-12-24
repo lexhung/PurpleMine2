@@ -16,7 +16,7 @@
 }
 
 .ui-dialog-titlebar.ui-widget-header {
-    margin: -5px;
+    margin: -3px -5px;
 }
 
 .issue .attribute {
@@ -96,4 +96,8 @@ table.progress {
 
 #attachments_form input.file_selector {
     display: inline-block;
+}
+
+#new-relation-form .relation_issue_to_id {
+    margin-left: 0.5em;
 }
