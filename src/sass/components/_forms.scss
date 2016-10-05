@@ -24,7 +24,6 @@ textarea {
 
 select,
 textarea,
-/*
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="date"],
@@ -35,7 +34,6 @@ input[type="number"],
 input[type="url"],
 input[type="tel"],
 input[type="color"]
-*/
 input[type="search"],
 input[type="email"],
 input[type="text"],
@@ -285,17 +283,10 @@ em.info {
             float: none;
             text-align: left;
             cursor: pointer;
-
-            > input {
-                margin-top: 0;
-                margin-left: -16px;
-                float: left;
-            }
         }
 
         &.inline {
             display: inline-block;
-            margin-right: 10px;
         }
 
         &.role-visibility {
@@ -307,6 +298,32 @@ em.info {
             top: 1px;
         }
     }
+}
+
+label.inline {
+    display: inline-block;
+    margin-right: $padding-base-horizontal;
+    padding-left: 16px;
+    float: none;
+    text-align: left;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+label.inline,
+label.block {
+    > input {
+        margin-top: .2em;
+        margin-left: -16px;
+        float: left;
+    }
+}
+
+fieldset > p > label:first-child {
+    margin-right: $padding-base-horizontal;
 }
 
 
@@ -498,14 +515,15 @@ select.bool_cf {
 
 
 /**
- * Hack: first <p> in issue form ("private" option) is moved to the right with
- * inline styles. Don't allow it break the layout
+ * #all_attributes > p[style] is targeting Redmine 2.x
  */
+#issue_is_private_wrap,
 #all_attributes > p[style] {
     // scss-lint:disable ImportantRule
     margin-right: 0 !important;
     margin-bottom: 0;
     padding-left: 0;
+    float: right;
 
     input {
         top: 2px;
@@ -621,13 +639,24 @@ fieldset#filters {
                 min-width: 130px;
             }
         }
-
-        &.add-filter {
-            padding-top: $table-condensed-cell-padding * 2;
-            text-align: right;
-            vertical-align: top;
-        }
     }
+
+    .add-filter {
+        text-align: right;
+    }
+
+    td.add-filter {
+        padding-top: $table-condensed-cell-padding * 2;
+        vertical-align: top;
+    }
+
+    div.add-filter {
+        padding-top: $table-condensed-cell-padding;
+    }
+}
+
+#filters-table {
+    float: left;
 }
 
 

@@ -21,7 +21,6 @@ $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
 $wiki-page-more-vertical-space: true !default;
 $top-menu-collapse:             false !default;
-$main-menu-collapse:            false !default;
 
 
 //== Colors
@@ -350,6 +349,7 @@ $logo-position-vertical:        center !default;
 $logo-space:                    floor($header-padding-vertical / 2) !default;
 
 $main-menu-bg:                  $gray-lightest !default;
+$main-menu-bg-hover:            $gray-lightest !default;
 $main-menu-link:                $gray-darker !default;
 $main-menu-link-active:         #000 !default;
 $main-menu-border:              $gray-lighter !default;
@@ -358,6 +358,7 @@ $main-menu-shadow-width:        3px !default;
 $main-menu-shadow-active:       $brand-primary !default;
 $main-menu-padding-vertical:    $padding-large-vertical !default;
 $main-menu-padding-horizontal:  5px !default;
+$main-menu-dropdown-bg:         lighten($main-menu-bg, 3%);
 
 
 //== Pagination
@@ -367,16 +368,20 @@ $pagination-padding-vertical:   $btn-padding-vertical !default;
 $pagination-padding-horizontal: 10px !default;
 
 $pagination-color:              $link-color !default;
-$pagination-bg:                 #fff !default;
+$pagination-bg:                 #f9f9f9 !default;
 $pagination-border:             #ddd !default;
 
 $pagination-hover-color:        $link-hover-color !default;
 $pagination-hover-bg:           $gray-lightest !default;
-$pagination-hover-border:       #ddd !default;
+$pagination-hover-border:       #bbb !default;
 
 $pagination-active-color:       #fff !default;
 $pagination-active-bg:          $brand-primary !default;
 $pagination-active-border:      $brand-primary !default;
+
+$pagination-inactive-color:     #ccc !default;
+$pagination-inactive-bg:        #fff !default;
+$pagination-inactive-border:    #eee !default;
 
 
 //== Tabs
@@ -438,9 +443,11 @@ $progress-bar-info-bg:          lighten($brand-info, 20%) !default;
 //== Panels
 //
 
-$panel-body-padding:            15px !default;
+$panel-body-padding-vertical:   15px !default;
+$panel-body-padding-horizontal: 15px !default;
+$panel-body-padding:            $panel-body-padding-vertical $panel-body-padding-horizontal !default;
 $panel-color:                   #555 !default;
-$panel-bg:                      #f5f5f5 !default;
+$panel-bg:                      #f9f9f9 !default;
 $panel-border:                  #ccc !default;
 $panel-border-radius:           $border-radius-base !default;
 $panel-shadow:                  0 1px 2px rgba(#000, .1),
@@ -499,7 +506,6 @@ $screen-sm-max:                 ($screen-md-min - 1) !default;
 $screen-md-max:                 ($screen-lg-min - 1) !default;
 
 $top-menu-collapse-breakpoint:  $screen-lg-min !default;
-$main-menu-collapse-breakpoint: $screen-lg-min !default;
 
 
 //== Content widths

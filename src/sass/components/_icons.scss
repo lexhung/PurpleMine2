@@ -6,8 +6,6 @@ $icon-danger-color:                  $brand-danger;
 $icon-danger-hover-color:            darken($brand-danger, 10%);
 
 @if $use-font-awesome {
-    @import "../lib/font-awesome";
-
     %fa-icon {
         &:before {
             @include fa-icon();
@@ -44,22 +42,24 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         @include nice-shadow(2);
     }
 
-    a {
-        @extend %fa-icon;
+    @if $use-font-awesome {
+        a {
+            @extend %fa-icon;
 
-        &:before {
-            margin-top: 3px;
-            margin-left: -16px;
-            float: left;
+            &:before {
+                margin-top: 3px;
+                margin-left: -16px;
+                float: left;
+            }
         }
-    }
 
-    li a.icon-checked {
-        background: transparent;
-    }
+        li a.icon-checked {
+            background: transparent;
+        }
 
-    ul li a.submenu {
-        @extend %image-arrow-right;
+        ul li a.submenu {
+            @extend %image-arrow-right;
+        }
     }
 }
 
@@ -82,9 +82,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         .contextual & {
             margin-left: .5em;
         }
+    }
 
-        p.buttons & {
-            margin-right: .5em;
+    .icon-only {
+        @extend %fa-icon;
+        font-size: 0;
+        white-space: nowrap;
+
+        &:before {
+            font-size: $font-size-base;
         }
     }
 
@@ -114,7 +120,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-reload:before                { content: $fa-var-refresh; }
     .icon-lock:before                  { content: $fa-var-lock; }
     .icon-unlock:before                { content: $fa-var-unlock; }
-    .icon-checked:before               { content: $fa-var-check-square; }
+    .icon-checked:before               { content: $fa-var-check; }
     .icon-details:before               { content: $fa-var-search-plus; }
     .icon-report:before                { content: $fa-var-pie-chart; }
     .icon-comment:before               { content: $fa-var-comment; }
@@ -140,6 +146,26 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         padding-left: 20px;
         background-repeat: no-repeat;
         background-position: 0% 50%;
+    }
+
+    .icon-only {
+        padding-left: 16px;
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
+    }
+
+    a.icon-only {
+        display: inline-block;
+        width: 0;
+        height: 16px;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        vertical-align: text-bottom;
+
+        &:after {
+            content: "&nbsp;";
+        }
     }
 
     .icon-add                   { background-image: url("../../../images/add.png"); }
@@ -188,7 +214,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
 .icon-add,
 .icon-edit,
-.icon-save {
+.icon-save,
+.icon-checked {
     @include link-variant($icon-success-color, $icon-success-hover-color);
 }
 
@@ -778,7 +805,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     .contextual [href*="edit"] {
         @extend %fa-icon;
-        font-size: $font-size-base;
         @include link-variant($icon-success-color, $icon-success-hover-color);
 
         &:before {
@@ -843,6 +869,14 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
             &:before {
                 content: $fa-var-file-excel-o;
+            }
+        }
+
+        .png {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-image-o;
             }
         }
     }
@@ -1065,15 +1099,19 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
                 display: none;
             }
 
-            &:last-child {
+            &:nth-child(2) {
+                @include link-variant($icon-success-color, $icon-success-hover-color);
+
                 &:before {
-                    color: $icon-success-color;
                     content: $fa-var-pencil;
                 }
+            }
 
-                &:hover:before,
-                &:focus:before {
-                    color: $icon-success-hover-color;
+            &:nth-child(3) {
+                @include link-variant($icon-danger-color, $icon-danger-hover-color);
+
+                &:before {
+                    content: $fa-var-trash;
                 }
             }
         }

@@ -65,6 +65,16 @@ Latest (master):
 * Fixed #19: missing text wrapping for long text custom fields
 * Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
 * Fixed duplicated pencil icon for Description in issue form in Redmine 3.1.2+
+* Fixed #21: added styling for compatibility with layout changes in Redmine 3.2.0
+* Fixed #23: set width for progress bars
+* Fixed #25: proper styles for pagination
+* Fixed #28: correct icon will be displayed for users that cannot edit notes in journal
+* Fixed #30: styles will now compile with latest Sass
+* Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
+* Various small visual tweaks
+* Fixed #34: project breadcrumbs in the header should wrap nicely
+* Fixed #35: `.icon-only` class should now display only icons, buttons with icons should de displayed correctly with Font-Awesome disabled
+* Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
 
 v1.7.2 (2015-10-12):
 

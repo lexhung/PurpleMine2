@@ -19,6 +19,7 @@ button {
 
     &:hover,
     &:focus {
+        outline: 0;
         text-decoration: none;
     }
 
@@ -83,6 +84,74 @@ form[action*="repository/diff"] {
 
 
 /**
+ * Button links
+ */
+
+p.buttons,
+.other-formats > span,
+#wiki_add_attachment > p {
+    > a {
+        display: inline-block;
+        padding: $input-padding-vertical $input-padding-horizontal;
+        border: 1px solid $pagination-border;
+        border-radius: $input-border-radius;
+        background-color: $pagination-bg;
+        text-shadow: 1px 1px 0 #fff;
+
+        &:hover,
+        &:focus {
+            border-color: $pagination-hover-border;
+            outline: 0;
+            background-color: $pagination-hover-bg;
+            text-decoration: none;
+        }
+
+        &:active {
+            outline: 0;
+            box-shadow: inset 0 3px 4px -2px rgba(#000, .1);
+        }
+
+        @if $use-font-awesome {
+            &.icon {
+                padding-left: 20px + $padding-small-vertical + $input-padding-vertical;
+            }
+        } @else {
+            &.icon,
+            &.atom {
+                padding-left: 20px + $input-padding-vertical;
+                background-position: $padding-small-vertical 50%;
+            }
+        }
+    }
+}
+
+
+/**
+ * Action buttons group
+ */
+
+p.buttons {
+    margin-bottom: $line-height-computed;
+}
+
+
+/**
+ * Export actions
+ */
+
+.other-formats {
+    margin: $line-height-computed 0 0;
+    text-align: right;
+
+    .pagination + &,
+    #wiki_add_attachment + & {
+        margin-top: 0;
+        float: right;
+    }
+}
+
+
+/**
  * Query builder buttons
  */
 
@@ -130,6 +199,12 @@ a[data-expands] {
     display: inline-block;
     margin-right: 10px;
     padding: 10px;
+
+    > .toggle-multiselect {
+        padding: 0;
+        border: 0 none;
+        background: transparent;
+    }
 
     img {
         display: none;
