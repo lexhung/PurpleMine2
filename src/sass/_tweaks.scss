@@ -21,6 +21,7 @@
 
 .issue .attribute {
     line-height: 1.75em;
+    clear: both;
     .label {
         min-width: 8em;
         display: inline-block;
@@ -31,8 +32,9 @@
     .value {
         display: inline-block;
         img.gravatar {
-            vertical-align: baseline;
+            vertical-align: text-top;
             margin-right: 0.25em;
+            border: 1px solid #ccc;
         }
     }
 
@@ -55,9 +57,10 @@ table.list thead tr {
     border-top: 2px solid #eee;
 }
 
-.cbp_images_form {
-    float: right;
-    margin-top: -1em;
+input.file_selector,
+#cbp_images_form a.add_attachment {
+    display: inline-block;
+    width: 240px;
 }
 
 table.progress {
@@ -79,6 +82,10 @@ table.progress {
     width: 6em;
 }
 
+select#issue_tracker_id {
+    min-width: 12em;
+}
+
 .jstElements {
     padding: 5px !important;
     border-top: 1px solid #ccc;
@@ -89,15 +96,41 @@ table.progress {
     background: cornsilk;
 }
 
-.tabular input[type="radio"],
-.tabular input[type="checkbox"] {
-    vertical-align: top;
-}
+.tabular {
+    input[type="radio"],
+    input[type="checkbox"] {
+        vertical-align: top;
+    }
 
-#attachments_form input.file_selector {
-    display: inline-block;
+    input, select {
+        min-width: 120px;
+    }
 }
 
 #new-relation-form .relation_issue_to_id {
     margin-left: 0.5em;
+}
+
+.objects-selection #principals label,
+.roles-selection label {
+    width: 20%;
+    display: block;
+    float: left;
+    min-width: 200px;
+}
+
+legend {
+    padding-right: 5px;
+    color: #555;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+div.attachments {
+    .delete,
+    .author {
+        float: right;
+        margin: 0 1.25em;
+        font-size: 0.85em;
+    }
 }

@@ -178,10 +178,10 @@ legend {
 
 span.required {
     position: relative;
-    top: 3px;
+    top: -3px;
     margin-left: -.2em;
-    color: #d00;
-    font-size: 1.5em;
+    color: #e74c3c;
+    font-size: 1.0em;
     font-weight: normal;
     line-height: 0;
 }
@@ -368,7 +368,7 @@ label[for=closed] {
 #user_form select,
 #user_identity_url,
 #custom_field_possible_values {
-    width: 100%;
+    width: 99%;
 }
 
 textarea.text_cf {
@@ -507,7 +507,6 @@ select.bool_cf {
     #issue_estimated_hours,
     #issue_done_ratio {
         width: 5.5em;
-        min-width: 1em;
         padding-left: .2em;
         text-align: right;
     }
